@@ -1,1 +1,1 @@
-# final_stepik_auto_tests_task
+This repo contains my final task for QA automation course
