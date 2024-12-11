@@ -48,7 +48,7 @@ class ProductPage(BasePage):
     def should_be_book_name_in_success_message(self):
         book_name = self.browser.find_element(*ProductPageLocators.ITEM_NAME).text
         success_message = self.browser.find_element(*ProductPageLocators.SUCCESS_MESSAGE).text
-        assert book_name in success_message, f'{book_name} is not in {success_message}'
+        assert book_name == success_message, f'{book_name} is not the same as {success_message}'
 
     def should_be_basket_total_price(self):
         assert self.is_element_present(*ProductPageLocators.BASKET_TOTAL_PRICE), "Basket total price is not present"
@@ -56,7 +56,7 @@ class ProductPage(BasePage):
     def should_be_book_price_in_basket_total_price(self):
         book_price = self.browser.find_element(*ProductPageLocators.ITEM_PRICE).text
         basket_total_price = self.browser.find_element(*ProductPageLocators.BASKET_TOTAL_PRICE).text
-        assert book_price in basket_total_price, f'{book_price} is not in {basket_total_price}'
+        assert book_price == basket_total_price, f'{book_price} is not the same as {basket_total_price}'
 
 
 
