@@ -12,14 +12,9 @@ class BasePage():
 
     def go_to_login_page(self):
         self.browser.find_element(*BasePageLocators.LOGIN_LINK).click()
-        # alert = self.browser.switch_to.alert
-        # alert.accept()
 
     def go_to_basket_page(self):
         self.browser.find_element(*BasePageLocators.BASKET_BTN).click()
-
-    def should_be_login_link(self):
-        assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not present"
 
     def open(self):
         self.browser.get(self.url)
@@ -47,3 +42,10 @@ class BasePage():
         except TimeoutException:
             return False
         return True
+
+    def should_be_login_link(self):
+        assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not present"
+
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
+                                                                     " probably unauthorised user"

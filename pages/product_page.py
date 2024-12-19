@@ -35,7 +35,6 @@ class ProductPage(BasePage):
     def should_be_item_price(self):
         assert self.is_element_present(*ProductPageLocators.ITEM_PRICE), "Item price is not present"
 
-
     def should_be_added_to_basket_messages(self):
         self.should_be_success_message()
         self.should_be_book_name_in_success_message()
@@ -65,12 +64,3 @@ class ProductPage(BasePage):
     def should_disappear_success_message(self):
         assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
             "Success message did not disappear, but should have been"
-
-
-
-
-
-
-
-
-
